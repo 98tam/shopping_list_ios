@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ListEntry" representedClassName="ListEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="bought" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <relationship name="listType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListType" inverseName="listEntry" inverseEntity="ListType"/>
+    </entity>
+    <entity name="ListType" representedClassName="ListType" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="listName" optional="YES" attributeType="String"/>
+        <relationship name="listEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="listType" inverseEntity="ListEntry"/>
+    </entity>
+    <elements>
+        <element name="ListEntry" positionX="-63" positionY="-9" width="128" height="148"/>
+        <element name="ListType" positionX="-63" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>
